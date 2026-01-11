@@ -4,7 +4,6 @@ services:
     name: quiz-game-server
     env: node
     region: singapore
-    plan: free
     buildCommand: cd server && npm install
     startCommand: cd server && npm start
     envVars:
@@ -27,7 +26,6 @@ services:
   - type: web
     name: quiz-game-client
     env: static
-    plan: free
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
     envVars:
