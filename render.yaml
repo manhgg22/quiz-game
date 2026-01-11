@@ -27,7 +27,6 @@ services:
   - type: web
     name: quiz-game-client
     env: static
-    region: singapore
     plan: free
     buildCommand: cd client && npm install && npm run build
     staticPublishPath: client/dist
