@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "question": "Sự kiện nào đánh dấu sự sụp đổ của Bức tường Berlin?",
+        "type": "mcq",
+        "options": [
+            "A. Ngày 9/11/1989",
+            "B. Ngày 1/1/1990",
+            "C. Ngày 3/10/1990",
+            "D. Ngày 25/12/1991"
+        ],
+        "correctAnswer": "A"
+    },
+    {
+        "id": 2,
+        "question": "Liên Xô chính thức tan rã vào năm nào?",
+        "type": "mcq",
+        "options": [
+            "A. 1989",
+            "B. 1990",
+            "C. 1991",
+            "D. 1992"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 3,
+        "question": "Mikhail Gorbachev là người khởi xướng chính sách Perestroika (Cải tổ) và Glasnost (Công khai hóa).",
+        "type": "truefalse",
+        "options": [
+            "Đúng",
+            "Sai"
+        ],
+        "correctAnswer": "Đúng"
+    },
+    {
+        "id": 4,
+        "question": "Quốc gia nào KHÔNG thuộc khối Đông Âu trước năm 1990?",
+        "type": "mcq",
+        "options": [
+            "A. Ba Lan",
+            "B. Tiệp Khắc",
+            "C. Áo",
+            "D. Rumani"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 5,
+        "question": "Cuộc Cách mạng Nhung (Velvet Revolution) diễn ra ở Tiệp Khắc là một cuộc cách mạng bạo lực.",
+        "type": "truefalse",
+        "options": [
+            "Đúng",
+            "Sai"
+        ],
+        "correctAnswer": "Sai"
+    }
+]

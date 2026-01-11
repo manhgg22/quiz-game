@@ -1,0 +1,149 @@
+.home-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.home-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.game-title {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #ec4899, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
+}
+
+.title-icon {
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.game-subtitle {
+    font-size: 1.5rem;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+.home-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.join-section {
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.join-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.team-selector {
+    margin: 30px 0;
+}
+
+.team-selector label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #a0a0a0;
+}
+
+.team-selector select {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.admin-desc {
+    color: #a0a0a0;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.btn-large {
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    min-width: 250px;
+}
+
+.game-rules {
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.game-rules h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.rule-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.rule-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.rule-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.rule-item strong {
+    color: #6366f1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 2.5rem;
+    }
+
+    .game-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .home-content {
+        grid-template-columns: 1fr;
+    }
+
+    .rules-grid {
+        grid-template-columns: 1fr;
+    }
+}

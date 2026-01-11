@@ -1,0 +1,177 @@
+.login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 24px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.title-icon {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.team-info {
+    font-size: 1.5rem;
+    color: #6366f1;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.login-subtitle {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin-top: 10px;
+}
+
+.login-content {
+    margin-bottom: 30px;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: shake 0.5s;
+}
+
+.error-icon {
+    font-size: 1.5rem;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(99, 102, 241, 0.2);
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.google-login-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.google-login-wrapper>div {
+    width: 100% !important;
+}
+
+.google-login-wrapper button {
+    width: 100% !important;
+}
+
+.login-info {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.login-info h3 {
+    color: #6366f1;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.login-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.login-info li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.login-info li::before {
+    content: '•';
+    position: absolute;
+    left: 10px;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+.login-info strong {
+    color: #ec4899;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login-footer .btn {
+    min-width: 200px;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 40px 30px;
+    }
+
+    .login-title {
+        font-size: 2rem;
+    }
+
+    .login-info {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "admins": [
+        "admin@fpt.edu.vn",
+        "btc@fpt.edu.vn",
+        "teacher@fpt.edu.vn"
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "name": "Nhóm 1",
+            "members": [
+                "sondthe180896@fpt.edu.vn",
+                "hieudmhe181908@fpt.edu.vn",
+                "longldhe186060@fpt.edu.vn",
+                "tuanpahe186842@fpt.edu.vn",
+                "toandxhs180234@fpt.edu.vn",
+                "longlths180310@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Nhóm 2",
+            "members": [
+                "dunglthe180884@fpt.edu.vn",
+                "datdthe180717@fpt.edu.vn",
+                "tuannahe181942@fpt.edu.vn",
+                "manhldhe180916@fpt.edu.vn",
+                "minhnqhe180190@fpt.edu.vn",
+                "thingdhe170717@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Nhóm 3",
+            "members": [
+                "tamdtahs181116@fpt.edu.vn",
+                "tuandahs173062@fpt.edu.vn",
+                "anhnthe171413@fpt.edu.vn",
+                "tienpvhe176306@fpt.edu.vn",
+                "kynchs180024@fpt.edu.vn",
+                "anhdvhe173475@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Nhóm 4",
+            "members": [
+                "anhldhe190086@fpt.edu.vn",
+                "hungtphs180150@fpt.edu.vn",
+                "huyennths181069@fpt.edu.vn",
+                "hungnvhe187005@fpt.edu.vn",
+                "huydqhs150215@fpt.edu.vn",
+                "dattvhs170130@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Nhóm 5",
+            "members": [
+                "namldhe173247@fpt.edu.vn",
+                "truongvvhe173305@fpt.edu.vn",
+                "anhnthe172469@fpt.edu.vn",
+                "chientthe170152@fpt.edu.vn",
+                "anhtthe173227@fpt.edu.vn",
+                "hunghdhs180003@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Nhóm 6",
+            "members": [
+                "thanhtche172348@fpt.edu.vn",
+                "duyhvhe171757@fpt.edu.vn",
+                "khaitdhe171989@fpt.edu.vn",
+                "huymthe181917@fpt.edu.vn",
+                "anhcphe186982@fpt.edu.vn",
+                "tunvhhe187287@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Nhóm 7",
+            "members": [
+                "huunqhe181152@fpt.edu.vn",
+                "manhtthe187058@fpt.edu.vn",
+                "dungvdhe181559@fpt.edu.vn",
+                "minhbdqhe180878@fpt.edu.vn",
+                "minhdahe186836@fpt.edu.vn",
+                "cuonghnhe187157@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Nhóm 8",
+            "members": [
+                "huennhs171293@fpt.edu.vn",
+                "maipths180124@fpt.edu.vn",
+                "linhptths171470@fpt.edu.vn",
+                "loanntha170058@fpt.edu.vn",
+                "tunglthe163392@fpt.edu.vn",
+                "quanlthe176544@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Nhóm 9",
+            "members": [
+                "duchche176581@fpt.edu.vn",
+                "minhldhe180677@fpt.edu.vn",
+                "khanhvdhe176803@fpt.edu.vn",
+                "huynvhe182260@fpt.edu.vn",
+                "baotqhe181879@fpt.edu.vn",
+                "duynhhe186848@fpt.edu.vn"
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Nhóm 10",
+            "members": [
+                "hoangphhe172740@fpt.edu.vn",
+                "bapxhe170974@fpt.edu.vn",
+                "tridvhe172667@fpt.edu.vn",
+                "ngocpths171567@fpt.edu.vn",
+                "quannahe173363@fpt.edu.vn",
+                "trungnhthe172739@fpt.edu.vn"
+            ]
+        }
+    ]
+}
