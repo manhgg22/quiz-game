@@ -17,6 +17,7 @@ function PlayerScreen() {
     const [role, setRole] = useState(null); // 'controller' or 'viewer'
     const [controllerEmail, setControllerEmail] = useState(null);
     const [userEmail, setUserEmail] = useState(null);
+    const [timer, setTimer] = useState({ remaining: 30, duration: 30, active: false });
 
     useEffect(() => {
         // Get auth token from localStorage
@@ -105,8 +106,46 @@ function PlayerScreen() {
             alert(message);
         });
 
+        // Timer events
+        newSocket.on('timerUpdate', (timerData) => {
+            setTimer({
+                remaining: timerData.remaining,
+                duration: timerData.duration,
+                active: true
+            });
+        });
+
+        newSocket.on('timerExpired', () => {
+            setTimer(prev => ({ ...prev, active: false, remaining: 0 }));
+        });
+
         return () => newSocket.close();
     }, [teamId, navigate]);
+
+    // Tab exit prevention
+    useEffect(() => {
+        const handleBeforeUnload = (e) => {
+            if (gameState?.currentQuestion && !gameState?.isLocked) {
+                e.preventDefault();
+                e.returnValue = 'Bạn đang trong lượt chơi. Thoát ra sẽ mất câu trả lời!';
+                return e.returnValue;
+            }
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden && gameState?.currentQuestion && !gameState?.isLocked) {
+                console.warn('⚠️ User chuyển tab trong lúc chơi');
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
+    }, [gameState]);
 
     const handleAnswerSelect = (answer) => {
         if (role !== 'controller') {
@@ -164,6 +203,12 @@ function PlayerScreen() {
         return results.teams.find(t => t.id === myTeam.id);
     };
 
+    const getTimerColor = () => {
+        if (timer.remaining > 10) return '#4ade80'; // Green
+        if (timer.remaining > 5) return '#fbbf24';  // Yellow
+        return '#ef4444'; // Red
+    };
+
     const handleLogout = () => {
         if (window.confirm('Bạn có chắc muốn đăng xuất?')) {
             localStorage.removeItem('authToken');
@@ -217,6 +262,23 @@ function PlayerScreen() {
                         {gameState.isLocked && (
                             <div className="locked-badge badge-danger pulse">
                                 🔒 ĐÃ KHÓA
+                            </div>
+                        )}
+                        {/* Timer Display */}
+                        {timer.active && gameState.currentQuestion && !gameState.isLocked && (
+                            <div
+                                className={`timer-badge ${timer.remaining <= 10 ? 'pulse' : ''}`}
+                                style={{
+                                    backgroundColor: getTimerColor(),
+                                    color: 'white',
+                                    padding: '8px 16px',
+                                    borderRadius: '8px',
+                                    fontWeight: 'bold',
+                                    fontSize: '1.1rem',
+                                    boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                                }}
+                            >
+                                ⏱️ {timer.remaining}s
                             </div>
                         )}
                         <button className="btn btn-secondary" onClick={handleLogout} style={{ marginLeft: '10px' }}>

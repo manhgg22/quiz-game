@@ -286,7 +286,7 @@ function AdminScreen() {
 
                                 <div className="round-info">
                                     <p><strong>Lượt:</strong> {gameState.currentRound}</p>
-                                    <p><strong>Đã Trả Lời:</strong> {getAnsweredCount()}/10</p>
+                                    <p><strong>Đã Trả Lời:</strong> {getAnsweredCount()}/{gameState.teams.length}</p>
                                     <p><strong>Trạng Thái:</strong>
                                         <span className={`status-badge ${gameState.isLocked ? 'locked' : 'active'}`}>
                                             {gameState.isLocked ? 'Đã Khóa' : 'Đang Chơi'}

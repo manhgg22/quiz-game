@@ -25,7 +25,7 @@ const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // Cấu hình game
 const CONFIG = {
-  TEAM_COUNT: 10,
+  TEAM_COUNT: 9,
   INITIAL_SCORE: 15,
   CORRECT_POINTS: 2,
   WRONG_POINTS: -2,
@@ -58,6 +58,7 @@ function findTeamByEmail(email) {
   return null;
 }
 
+
 // Khởi tạo trạng thái game
 let gameState = {
   teams: [],
@@ -65,16 +66,25 @@ let gameState = {
   currentRound: 0,
   isLocked: false,
   history: [],
-  sampleQuestions: []
+  sampleQuestions: [],
+  timer: {
+    active: false,
+    startTime: null,
+    duration: 30, // 30 giây
+    remaining: 30,
+    interval: null
+  }
 };
 
-// Khởi tạo 10 nhóm
+// Khởi tạo teams từ teamMembers.json
 function initializeTeams() {
   gameState.teams = [];
-  for (let i = 1; i <= CONFIG.TEAM_COUNT; i++) {
+  // Use actual team IDs from teamMembers.json
+  const validTeamIds = teamMembers.teams.map(t => t.id);
+  validTeamIds.forEach(teamId => {
     gameState.teams.push({
-      id: i,
-      name: `Nhóm ${i}`,
+      id: teamId,
+      name: `Nhóm ${teamId}`,
       score: CONFIG.INITIAL_SCORE,
       answer: null,
       specialCards: {
@@ -93,7 +103,7 @@ function initializeTeams() {
       controllerEmail: null,   // Email của controller
       viewers: []              // Array of {socketId, email}
     });
-  }
+  });
 }
 
 // Load câu hỏi mẫu
@@ -106,6 +116,22 @@ function loadSampleQuestions() {
     console.log('⚠️ Không load được câu hỏi mẫu:', error.message);
     gameState.sampleQuestions = [];
   }
+}
+
+// Helper: Sanitize gameState for Socket.IO emission (remove circular references)
+function getSanitizedGameState() {
+  return {
+    ...gameState,
+    teams: gameState.teams.map(team => ({
+      ...team,
+      controller: null,  // Remove socket reference
+      viewers: []        // Remove socket references
+    })),
+    timer: {
+      ...gameState.timer,
+      interval: null  // Remove setInterval reference
+    }
+  };
 }
 
 // Tính toán điểm và hiệu ứng domino
@@ -410,13 +436,13 @@ io.on('connection', (socket) => {
   // Handle admin connection
   if (isAdmin) {
     console.log(`👨‍💼 Admin ${name} (${email}) đã kết nối`);
-    socket.emit('gameState', gameState);
+    socket.emit('gameState', getSanitizedGameState());
 
     // Admin join (for BTC)
     socket.on('joinAdmin', () => {
       socket.join('admin');
       console.log('👨‍💼 Admin đã join');
-      socket.emit('gameState', gameState);
+      socket.emit('gameState', getSanitizedGameState());
     });
 
     // Continue with admin event handlers below...
@@ -452,7 +478,7 @@ io.on('connection', (socket) => {
       email,
       controllerEmail: team.controllerEmail
     });
-    socket.emit('gameState', gameState);
+    socket.emit('gameState', getSanitizedGameState());
 
     // Join team room
     socket.join(`team-${teamId}`);
@@ -479,7 +505,7 @@ io.on('connection', (socket) => {
       const team = gameState.teams.find(t => t.id === teamId);
       if (team) {
         team.answer = answer;
-        io.emit('gameState', gameState);
+        io.emit('gameState', getSanitizedGameState());
         console.log(`✍️ ${team.name} trả lời: ${answer}`);
       }
     });
@@ -513,7 +539,7 @@ io.on('connection', (socket) => {
         team.activeCards.redirectTarget = redirectTarget;
       }
 
-      io.emit('gameState', gameState);
+      io.emit('gameState', getSanitizedGameState());
       console.log(`🎴 ${team.name} kích hoạt thẻ: ${cardType}`);
     });
 
@@ -563,11 +589,16 @@ io.on('connection', (socket) => {
   socket.on('joinAdmin', () => {
     socket.join('admin');
     console.log('👨‍💼 Admin đã join');
-    socket.emit('gameState', gameState);
+    socket.emit('gameState', getSanitizedGameState());
   });
 
   // Admin tạo câu hỏi
   socket.on('createQuestion', (questionData) => {
+    // Clear existing timer if any
+    if (gameState.timer.interval) {
+      clearInterval(gameState.timer.interval);
+    }
+
     gameState.currentQuestion = questionData;
     gameState.currentRound++;
     gameState.isLocked = false;
@@ -577,16 +608,47 @@ io.on('connection', (socket) => {
       team.answer = null;
     });
 
+    // Start 30-second timer
+    gameState.timer.active = true;
+    gameState.timer.startTime = Date.now();
+    gameState.timer.remaining = gameState.timer.duration;
+
     io.emit('newQuestion', gameState.currentQuestion);
-    io.emit('gameState', gameState);
+    io.emit('gameState', getSanitizedGameState());
     console.log(`❓ Câu hỏi mới (Round ${gameState.currentRound}):`, questionData.question);
+    console.log(`⏱️  Timer bắt đầu: ${gameState.timer.duration} giây`);
+
+    // Timer countdown
+    gameState.timer.interval = setInterval(() => {
+      gameState.timer.remaining--;
+
+      // Broadcast timer update (only timer data, not full gameState)
+      io.emit('timerUpdate', {
+        remaining: gameState.timer.remaining,
+        duration: gameState.timer.duration
+      });
+
+      console.log(`⏱️  Timer: ${gameState.timer.remaining}s`);
+
+      // Auto-lock when timer expires
+      if (gameState.timer.remaining <= 0) {
+        clearInterval(gameState.timer.interval);
+        gameState.timer.active = false;
+        gameState.isLocked = true;
+
+        io.emit('roundLocked', true);
+        io.emit('timerExpired');
+
+        console.log('⏱️  Timer hết giờ - Tự động khóa lượt!');
+      }
+    }, 1000);
   });
 
   // Admin khóa lượt
   socket.on('lockRound', () => {
     gameState.isLocked = true;
     io.emit('roundLocked', true);
-    io.emit('gameState', gameState);
+    io.emit('gameState', getSanitizedGameState());
     console.log('🔒 Lượt đã bị khóa');
   });
 
@@ -608,7 +670,7 @@ io.on('connection', (socket) => {
     });
 
     io.emit('roundResults', results);
-    io.emit('gameState', gameState);
+    io.emit('gameState', getSanitizedGameState());
     console.log('📊 Đã tính điểm:', results);
   });
 
@@ -621,7 +683,7 @@ io.on('connection', (socket) => {
     gameState.history = [];
 
     io.emit('gameReset');
-    io.emit('gameState', gameState);
+    io.emit('gameState', getSanitizedGameState());
     console.log('🔄 Game đã được reset');
   });
 

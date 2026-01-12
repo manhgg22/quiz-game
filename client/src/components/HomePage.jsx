@@ -37,9 +37,9 @@ function HomePage() {
                                 value={selectedTeam}
                                 onChange={(e) => setSelectedTeam(e.target.value)}
                             >
-                                {[...Array(10)].map((_, i) => (
-                                    <option key={i + 1} value={i + 1}>
-                                        Nhóm {i + 1}
+                                {[1, 3, 4, 5, 6, 7, 8, 9, 10].map((teamId) => (
+                                    <option key={teamId} value={teamId}>
+                                        Nhóm {teamId}
                                     </option>
                                 ))}
                             </select>

@@ -2,7 +2,12 @@
     "admins": [
         "manhldhe180916@fpt.edu.vn",
         "btc@fpt.edu.vn",
-        "teacher@fpt.edu.vn"
+        "teacher@fpt.edu.vn",
+        "dunglthe180884@fpt.edu.vn",
+        "datdthe180717@fpt.edu.vn",
+        "tuannahe181942@fpt.edu.vn",
+        "minhnqhe180190@fpt.edu.vn",
+        "thingdhe170717@fpt.edu.vn"
     ],
     "teams": [
         {
@@ -15,17 +20,6 @@
                 "tuanpahe186842@fpt.edu.vn",
                 "toandxhs180234@fpt.edu.vn",
                 "longlths180310@fpt.edu.vn"
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Nhóm 2",
-            "members": [
-                "dunglthe180884@fpt.edu.vn",
-                "datdthe180717@fpt.edu.vn",
-                "tuannahe181942@fpt.edu.vn",
-                "minhnqhe180190@fpt.edu.vn",
-                "thingdhe170717@fpt.edu.vn"
             ]
         },
         {
