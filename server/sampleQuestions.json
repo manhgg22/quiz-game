@@ -1,58 +1,182 @@
 [
     {
         "id": 1,
-        "question": "Sự kiện nào đánh dấu sự sụp đổ của Bức tường Berlin?",
+        "question": "Liên Xô chính thức được thành lập vào năm nào?",
         "type": "mcq",
         "options": [
-            "A. Ngày 9/11/1989",
-            "B. Ngày 1/1/1990",
-            "C. Ngày 3/10/1990",
-            "D. Ngày 25/12/1991"
-        ],
-        "correctAnswer": "A"
-    },
-    {
-        "id": 2,
-        "question": "Liên Xô chính thức tan rã vào năm nào?",
-        "type": "mcq",
-        "options": [
-            "A. 1989",
-            "B. 1990",
-            "C. 1991",
-            "D. 1992"
+            "A. 1917",
+            "B. 1918",
+            "C. 1922",
+            "D. 1924"
         ],
         "correctAnswer": "C"
     },
     {
-        "id": 3,
-        "question": "Mikhail Gorbachev là người khởi xướng chính sách Perestroika (Cải tổ) và Glasnost (Công khai hóa).",
-        "type": "truefalse",
+        "id": 2,
+        "question": "Cuộc Cách mạng Tháng Mười Nga diễn ra vào năm nào?",
+        "type": "mcq",
         "options": [
-            "Đúng",
-            "Sai"
+            "A. 1905",
+            "B. 1917",
+            "C. 1918",
+            "D. 1922"
         ],
-        "correctAnswer": "Đúng"
+        "correctAnswer": "B"
+    },
+    {
+        "id": 3,
+        "question": "Người lãnh đạo cuộc Cách mạng Tháng Mười Nga là ai?",
+        "type": "mcq",
+        "options": [
+            "A. Stalin",
+            "B. Trotsky",
+            "C. V.I. Lenin",
+            "D. Gorbachev"
+        ],
+        "correctAnswer": "C"
     },
     {
         "id": 4,
-        "question": "Quốc gia nào KHÔNG thuộc khối Đông Âu trước năm 1990?",
+        "question": "Bản chất của Nhà nước Liên Xô là gì?",
         "type": "mcq",
         "options": [
-            "A. Ba Lan",
-            "B. Tiệp Khắc",
-            "C. Áo",
-            "D. Rumani"
+            "A. Nhà nước tư sản",
+            "B. Nhà nước quân chủ",
+            "C. Nhà nước xã hội chủ nghĩa",
+            "D. Nhà nước liên bang tư bản"
         ],
         "correctAnswer": "C"
     },
     {
         "id": 5,
-        "question": "Cuộc Cách mạng Nhung (Velvet Revolution) diễn ra ở Tiệp Khắc là một cuộc cách mạng bạo lực.",
-        "type": "truefalse",
+        "question": "Liên Xô trở thành cường quốc công nghiệp đứng thứ hai thế giới vào thời kỳ nào?",
+        "type": "mcq",
         "options": [
-            "Đúng",
-            "Sai"
+            "A. Trước Chiến tranh thế giới thứ nhất",
+            "B. Trước Chiến tranh thế giới thứ hai",
+            "C. Sau Chiến tranh thế giới thứ hai",
+            "D. Thập niên 1980"
         ],
-        "correctAnswer": "Sai"
+        "correctAnswer": "B"
+    },
+    {
+        "id": 6,
+        "question": "Trong Chiến tranh thế giới thứ hai, Liên Xô tham gia với tư cách là:",
+        "type": "mcq",
+        "options": [
+            "A. Phe phát xít",
+            "B. Trung lập",
+            "C. Phe Đồng minh",
+            "D. Phe tư bản"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 7,
+        "question": "Chiến thắng nào của Liên Xô được coi là bước ngoặt trong Chiến tranh thế giới thứ hai?",
+        "type": "mcq",
+        "options": [
+            "A. Trận Moskva",
+            "B. Trận Stalingrad",
+            "C. Trận Berlin",
+            "D. Trận Kursk"
+        ],
+        "correctAnswer": "B"
+    },
+    {
+        "id": 8,
+        "question": "Sau Chiến tranh thế giới thứ hai, Liên Xô là một trong hai siêu cường đứng đầu trật tự thế giới nào?",
+        "type": "mcq",
+        "options": [
+            "A. Đa cực",
+            "B. Đơn cực",
+            "C. Hai cực",
+            "D. Liên minh quân sự"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 9,
+        "question": "Tổ chức quân sự do Liên Xô đứng đầu được thành lập năm 1955 là:",
+        "type": "mcq",
+        "options": [
+            "A. NATO",
+            "B. SEATO",
+            "C. Hiệp ước Vác-sa-va",
+            "D. ASEAN"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 10,
+        "question": "Nguyên nhân chủ yếu khiến kinh tế Liên Xô lâm vào khủng hoảng từ những năm 1970 là gì?",
+        "type": "mcq",
+        "options": [
+            "A. Thiên tai liên tiếp",
+            "B. Cơ chế quản lý quan liêu, bao cấp, kém hiệu quả",
+            "C. Chiến tranh xâm lược",
+            "D. Dân số giảm mạnh"
+        ],
+        "correctAnswer": "B"
+    },
+    {
+        "id": 11,
+        "question": "Người khởi xướng công cuộc cải tổ (Perestroika) ở Liên Xô là ai?",
+        "type": "mcq",
+        "options": [
+            "A. Lenin",
+            "B. Stalin",
+            "C. Brezhnev",
+            "D. Mikhail Gorbachev"
+        ],
+        "correctAnswer": "D"
+    },
+    {
+        "id": 12,
+        "question": "Mục tiêu của công cuộc cải tổ ở Liên Xô là gì?",
+        "type": "mcq",
+        "options": [
+            "A. Xóa bỏ chủ nghĩa xã hội",
+            "B. Khắc phục khủng hoảng, đổi mới đất nước",
+            "C. Mở rộng lãnh thổ",
+            "D. Chạy đua vũ trang"
+        ],
+        "correctAnswer": "B"
+    },
+    {
+        "id": 13,
+        "question": "Cuộc đảo chính tháng 8 năm 1991 ở Liên Xô nhằm mục đích gì?",
+        "type": "mcq",
+        "options": [
+            "A. Lật đổ Đảng Cộng sản",
+            "B. Chống cải tổ, duy trì Liên Xô cũ",
+            "C. Thành lập Liên bang Nga",
+            "D. Kết thúc Chiến tranh Lạnh"
+        ],
+        "correctAnswer": "B"
+    },
+    {
+        "id": 14,
+        "question": "Liên Xô chính thức tan rã vào thời điểm nào?",
+        "type": "mcq",
+        "options": [
+            "A. Tháng 8/1991",
+            "B. Tháng 10/1991",
+            "C. Tháng 12/1991",
+            "D. Tháng 1/1992"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 15,
+        "question": "Hệ quả lớn nhất của sự tan rã Liên Xô đối với thế giới là gì?",
+        "type": "mcq",
+        "options": [
+            "A. Chủ nghĩa xã hội hoàn toàn chấm dứt",
+            "B. Trật tự thế giới hai cực sụp đổ",
+            "C. NATO tan rã",
+            "D. Chiến tranh thế giới mới bùng nổ"
+        ],
+        "correctAnswer": "B"
     }
 ]

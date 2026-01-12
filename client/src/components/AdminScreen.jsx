@@ -76,12 +76,25 @@ function AdminScreen() {
     };
 
     const handleLoadSampleQuestion = (question) => {
+        // Find the full option string that matches the correct answer letter (e.g. "C" matches "C. 1922")
+        // For True/False, it might match directly
+        let fullCorrectAnswer = question.correctAnswer;
+
+        if (question.type === 'mcq') {
+            const match = question.options.find(opt => opt.startsWith(question.correctAnswer + '.'));
+            if (match) {
+                fullCorrectAnswer = match;
+            }
+        }
+
+        // Load question into form with correct answer pre-selected
         setQuestionForm({
             question: question.question,
             type: question.type,
             options: question.options,
-            correctAnswer: question.correctAnswer
+            correctAnswer: fullCorrectAnswer
         });
+        console.log(`📝 Đã load câu hỏi vào form: ${question.question.substring(0, 30)}... Correct: ${fullCorrectAnswer}`);
     };
 
     const handleCreateQuestion = () => {
@@ -270,6 +283,7 @@ function AdminScreen() {
                                             key={idx}
                                             className="sample-question-btn"
                                             onClick={() => handleLoadSampleQuestion(q)}
+                                            title="Click để load câu hỏi vào form (đáp án đã chọn sẵn)"
                                         >
                                             <span className="sample-number">#{idx + 1}</span>
                                             <span className="sample-text">{q.question.substring(0, 50)}...</span>

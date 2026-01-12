@@ -171,12 +171,25 @@ function calculateScores() {
 
   // Bước 2: Tính domino chain
   wrongTeams.forEach(wrongTeamId => {
-    const nextTeamId = (wrongTeamId % CONFIG.TEAM_COUNT) + 1;
-    const nextTeam = gameState.teams.find(t => t.id === nextTeamId);
+    // Tìm vị trí của team sai trong mảng teams
+    const wrongTeamIndex = gameState.teams.findIndex(t => t.id === wrongTeamId);
+    if (wrongTeamIndex === -1) {
+      console.warn(`⚠️ Không tìm thấy team ${wrongTeamId}`);
+      return;
+    }
+
+    // Team tiếp theo là team ở vị trí kế tiếp (vòng tròn)
+    const nextTeamIndex = (wrongTeamIndex + 1) % gameState.teams.length;
+    const nextTeam = gameState.teams[nextTeamIndex];
+
+    if (!nextTeam) {
+      console.warn(`⚠️ Không tìm thấy team tiếp theo`);
+      return;
+    }
 
     // Kiểm tra immunity
     if (!nextTeam.activeCards.immunity) {
-      let targetId = nextTeamId;
+      let targetId = nextTeam.id;
 
       // Kiểm tra redirect
       if (nextTeam.activeCards.redirect && nextTeam.activeCards.redirectTarget) {
