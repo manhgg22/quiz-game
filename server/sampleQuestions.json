@@ -1,182 +1,182 @@
 [
     {
         "id": 1,
-        "question": "Liên Xô chính thức được thành lập vào năm nào?",
+        "question": "Nguyên nhân sâu xa nhất dẫn đến sự tan rã của Liên Xô là gì?",
         "type": "mcq",
         "options": [
-            "A. 1917",
-            "B. 1918",
-            "C. 1922",
-            "D. 1924"
+            "A. Sự chống phá của các thế lực bên ngoài",
+            "B. Thiên tai và dịch bệnh kéo dài",
+            "C. Sai lầm trong đường lối lãnh đạo và mô hình xây dựng CNXH",
+            "D. Dân số giảm nhanh"
         ],
         "correctAnswer": "C"
     },
     {
         "id": 2,
-        "question": "Cuộc Cách mạng Tháng Mười Nga diễn ra vào năm nào?",
+        "question": "Cuộc khủng hoảng kinh tế ở Liên Xô từ thập niên 1970 bắt nguồn chủ yếu từ đâu?",
         "type": "mcq",
         "options": [
-            "A. 1905",
-            "B. 1917",
-            "C. 1918",
-            "D. 1922"
+            "A. Thiếu tài nguyên",
+            "B. Chiến tranh kéo dài",
+            "C. Cơ chế quản lý quan liêu, bao cấp, kém hiệu quả",
+            "D. Bị cô lập hoàn toàn về kinh tế"
+        ],
+        "correctAnswer": "C"
+    },
+    {
+        "id": 3,
+        "question": "Người khởi xướng công cuộc cải tổ (Perestroika) ở Liên Xô là ai?",
+        "type": "mcq",
+        "options": [
+            "A. V.I. Lenin",
+            "B. J. Stalin",
+            "C. L. Brezhnev",
+            "D. Mikhail Gorbachev"
+        ],
+        "correctAnswer": "D"
+    },
+    {
+        "id": 4,
+        "question": "Mục tiêu ban đầu của công cuộc cải tổ ở Liên Xô là gì?",
+        "type": "mcq",
+        "options": [
+            "A. Xóa bỏ chủ nghĩa xã hội",
+            "B. Khắc phục khủng hoảng, đổi mới đất nước",
+            "C. Chuyển sang kinh tế tư bản",
+            "D. Giải thể Liên bang"
         ],
         "correctAnswer": "B"
     },
     {
-        "id": 3,
-        "question": "Người lãnh đạo cuộc Cách mạng Tháng Mười Nga là ai?",
-        "type": "mcq",
-        "options": [
-            "A. Stalin",
-            "B. Trotsky",
-            "C. V.I. Lenin",
-            "D. Gorbachev"
-        ],
-        "correctAnswer": "C"
-    },
-    {
-        "id": 4,
-        "question": "Bản chất của Nhà nước Liên Xô là gì?",
-        "type": "mcq",
-        "options": [
-            "A. Nhà nước tư sản",
-            "B. Nhà nước quân chủ",
-            "C. Nhà nước xã hội chủ nghĩa",
-            "D. Nhà nước liên bang tư bản"
-        ],
-        "correctAnswer": "C"
-    },
-    {
         "id": 5,
-        "question": "Liên Xô trở thành cường quốc công nghiệp đứng thứ hai thế giới vào thời kỳ nào?",
+        "question": "Sai lầm lớn nhất trong quá trình cải tổ ở Liên Xô là gì?",
         "type": "mcq",
         "options": [
-            "A. Trước Chiến tranh thế giới thứ nhất",
-            "B. Trước Chiến tranh thế giới thứ hai",
-            "C. Sau Chiến tranh thế giới thứ hai",
-            "D. Thập niên 1980"
+            "A. Không cải tổ kinh tế",
+            "B. Cải tổ chính trị trước, làm suy yếu vai trò lãnh đạo của Đảng",
+            "C. Không cải cách quân đội",
+            "D. Không mở rộng quan hệ đối ngoại"
         ],
         "correctAnswer": "B"
     },
     {
         "id": 6,
-        "question": "Trong Chiến tranh thế giới thứ hai, Liên Xô tham gia với tư cách là:",
+        "question": "Biểu hiện rõ nhất của khủng hoảng chính trị ở Liên Xô cuối thập niên 1980 là gì?",
         "type": "mcq",
         "options": [
-            "A. Phe phát xít",
-            "B. Trung lập",
-            "C. Phe Đồng minh",
-            "D. Phe tư bản"
+            "A. Đời sống nhân dân khó khăn",
+            "B. Kinh tế trì trệ",
+            "C. Đảng Cộng sản mất vai trò lãnh đạo",
+            "D. Quân đội suy yếu"
         ],
         "correctAnswer": "C"
     },
     {
         "id": 7,
-        "question": "Chiến thắng nào của Liên Xô được coi là bước ngoặt trong Chiến tranh thế giới thứ hai?",
+        "question": "Sự kiện nào được xem là nguyên nhân trực tiếp đẩy nhanh sự tan rã của Liên Xô?",
         "type": "mcq",
         "options": [
-            "A. Trận Moskva",
-            "B. Trận Stalingrad",
-            "C. Trận Berlin",
-            "D. Trận Kursk"
-        ],
-        "correctAnswer": "B"
-    },
-    {
-        "id": 8,
-        "question": "Sau Chiến tranh thế giới thứ hai, Liên Xô là một trong hai siêu cường đứng đầu trật tự thế giới nào?",
-        "type": "mcq",
-        "options": [
-            "A. Đa cực",
-            "B. Đơn cực",
-            "C. Hai cực",
-            "D. Liên minh quân sự"
+            "A. Chiến tranh Lạnh kết thúc",
+            "B. Cải tổ thất bại",
+            "C. Cuộc đảo chính tháng 8 năm 1991 thất bại",
+            "D. Kinh tế suy thoái toàn cầu"
         ],
         "correctAnswer": "C"
     },
     {
-        "id": 9,
-        "question": "Tổ chức quân sự do Liên Xô đứng đầu được thành lập năm 1955 là:",
+        "id": 8,
+        "question": "Mục đích của cuộc đảo chính tháng 8 năm 1991 ở Liên Xô là gì?",
         "type": "mcq",
         "options": [
-            "A. NATO",
-            "B. SEATO",
-            "C. Hiệp ước Vác-sa-va",
-            "D. ASEAN"
+            "A. Lật đổ Đảng Cộng sản",
+            "B. Chống cải tổ, duy trì Liên Xô cũ",
+            "C. Thành lập Liên bang Nga",
+            "D. Chấm dứt Chiến tranh Lạnh"
+        ],
+        "correctAnswer": "B"
+    },
+    {
+        "id": 9,
+        "question": "Sau cuộc đảo chính tháng 8/1991 thất bại, điều gì đã xảy ra?",
+        "type": "mcq",
+        "options": [
+            "A. Liên Xô được củng cố",
+            "B. Kinh tế nhanh chóng phục hồi",
+            "C. Các nước cộng hòa tuyên bố độc lập hàng loạt",
+            "D. Đảng Cộng sản lấy lại quyền lực"
         ],
         "correctAnswer": "C"
     },
     {
         "id": 10,
-        "question": "Nguyên nhân chủ yếu khiến kinh tế Liên Xô lâm vào khủng hoảng từ những năm 1970 là gì?",
+        "question": "Liên Xô chính thức tuyên bố chấm dứt tồn tại vào thời điểm nào?",
         "type": "mcq",
         "options": [
-            "A. Thiên tai liên tiếp",
-            "B. Cơ chế quản lý quan liêu, bao cấp, kém hiệu quả",
-            "C. Chiến tranh xâm lược",
-            "D. Dân số giảm mạnh"
+            "A. Tháng 8 năm 1991",
+            "B. Tháng 10 năm 1991",
+            "C. Tháng 12 năm 1991",
+            "D. Tháng 1 năm 1992"
         ],
-        "correctAnswer": "B"
+        "correctAnswer": "C"
     },
     {
         "id": 11,
-        "question": "Người khởi xướng công cuộc cải tổ (Perestroika) ở Liên Xô là ai?",
+        "question": "Ai là Tổng Bí thư Đảng Cộng sản Liên Xô cuối cùng?",
         "type": "mcq",
         "options": [
-            "A. Lenin",
-            "B. Stalin",
-            "C. Brezhnev",
+            "A. Leonid Brezhnev",
+            "B. Yuri Andropov",
+            "C. Konstantin Chernenko",
             "D. Mikhail Gorbachev"
         ],
         "correctAnswer": "D"
     },
     {
         "id": 12,
-        "question": "Mục tiêu của công cuộc cải tổ ở Liên Xô là gì?",
+        "question": "Quốc gia nào kế thừa địa vị pháp lý của Liên Xô trên trường quốc tế?",
         "type": "mcq",
         "options": [
-            "A. Xóa bỏ chủ nghĩa xã hội",
-            "B. Khắc phục khủng hoảng, đổi mới đất nước",
-            "C. Mở rộng lãnh thổ",
-            "D. Chạy đua vũ trang"
+            "A. Ukraina",
+            "B. Belarus",
+            "C. Kazakhstan",
+            "D. Liên bang Nga"
         ],
-        "correctAnswer": "B"
+        "correctAnswer": "D"
     },
     {
         "id": 13,
-        "question": "Cuộc đảo chính tháng 8 năm 1991 ở Liên Xô nhằm mục đích gì?",
+        "question": "Sự tan rã của Liên Xô đã làm thay đổi trật tự thế giới như thế nào?",
         "type": "mcq",
         "options": [
-            "A. Lật đổ Đảng Cộng sản",
-            "B. Chống cải tổ, duy trì Liên Xô cũ",
-            "C. Thành lập Liên bang Nga",
-            "D. Kết thúc Chiến tranh Lạnh"
+            "A. Hình thành trật tự đa cực ổn định",
+            "B. Trật tự hai cực Xô – Mỹ sụp đổ",
+            "C. NATO giải thể",
+            "D. Bùng nổ chiến tranh thế giới mới"
         ],
         "correctAnswer": "B"
     },
     {
         "id": 14,
-        "question": "Liên Xô chính thức tan rã vào thời điểm nào?",
+        "question": "Nhận định nào sau đây là đúng về bản chất sự tan rã của Liên Xô?",
         "type": "mcq",
         "options": [
-            "A. Tháng 8/1991",
-            "B. Tháng 10/1991",
-            "C. Tháng 12/1991",
-            "D. Tháng 1/1992"
+            "A. Là sự thất bại tất yếu của chủ nghĩa xã hội",
+            "B. Là sự sụp đổ của một mô hình CNXH chưa phù hợp",
+            "C. Do nhân dân phản đối CNXH",
+            "D. Do kinh tế thị trường phát triển quá nhanh"
         ],
-        "correctAnswer": "C"
+        "correctAnswer": "B"
     },
     {
         "id": 15,
-        "question": "Hệ quả lớn nhất của sự tan rã Liên Xô đối với thế giới là gì?",
+        "question": "Bài học lớn nhất rút ra từ sự tan rã của Liên Xô là gì?",
         "type": "mcq",
         "options": [
-            "A. Chủ nghĩa xã hội hoàn toàn chấm dứt",
-            "B. Trật tự thế giới hai cực sụp đổ",
-            "C. NATO tan rã",
-            "D. Chiến tranh thế giới mới bùng nổ"
+            "A. Không cần cải cách, đổi mới",
+            "B. Phải từ bỏ con đường xã hội chủ nghĩa",
+            "C. Đổi mới phải đúng hướng, giữ vững vai trò lãnh đạo của Đảng",
+            "D. Không nên hội nhập quốc tế"
         ],
-        "correctAnswer": "B"
+        "correctAnswer": "C"
     }
 ]
