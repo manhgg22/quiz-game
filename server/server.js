@@ -243,7 +243,7 @@ app.post('/api/auth/admin', async (req, res) => {
 
     // Simple admin credentials (you should use environment variables in production)
     const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-    const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
+    const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123@@';
 
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
       // Generate JWT token for admin
