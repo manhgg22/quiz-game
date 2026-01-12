@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game - Demo Mode Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            list-style-position: inside;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .controls {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .team-frame {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .team-frame iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+        }
+
+        .admin-frame {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .admin-frame iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🎮 Quiz Game - Demo Mode Test</h1>
+        <p>Test với Mock Data - Không cần Gmail thật!</p>
+    </div>
+
+    <div class="highlight">
+        ✨ Mỗi team có 3 nút: Member 1 (Controller), Member 2 (Viewer), Member 3 (Viewer)
+    </div>
+
+    <div class="info-box">
+        <h3>📋 Hướng Dẫn Sử Dụng Demo Mode</h3>
+        <ul>
+            <li><strong>Load Admin:</strong> Mở trang admin (login với admin/admin123)</li>
+            <li><strong>Load All Teams:</strong> Mở tất cả 10 teams với demo login buttons</li>
+            <li><strong>Click nút trong mỗi frame:</strong> Login nhanh với mock data</li>
+            <li><strong>Member 1:</strong> Sẽ là Controller (có thể submit answer)</li>
+            <li><strong>Member 2-3:</strong> Sẽ là Viewer (chỉ xem)</li>
+            <li><strong>Lưu ý:</strong> Mỗi frame độc lập, bạn có thể login nhiều members cùng lúc</li>
+        </ul>
+    </div>
+
+    <div class="controls">
+        <h2>🎛️ Controls</h2>
+        <div class="button-group">
+            <button class="btn-primary" onclick="loadAdmin()">👨‍💼 Load Admin</button>
+            <button class="btn-success" onclick="loadAllTeams()">🎯 Load All Teams (1-10)</button>
+            <button class="btn-warning" onclick="loadTeams(1, 5)">📊 Load Teams 1-5</button>
+            <button class="btn-warning" onclick="loadTeams(6, 10)">📊 Load Teams 6-10</button>
+            <button class="btn-danger" onclick="clearAll()">🗑️ Clear All</button>
+        </div>
+    </div>
+
+    <div id="admin-container"></div>
+    <div id="teams-container" class="grid-container"></div>
+
+    <script>
+        const BASE_URL = 'http://localhost:5173';
+
+        function loadAdmin() {
+            const container = document.getElementById('admin-container');
+            container.innerHTML = `
+                <div class="admin-frame">
+                    <div class="admin-header">👨‍💼 Admin Panel (Login: admin / admin123)</div>
+                    <iframe src="${BASE_URL}/admin"></iframe>
+                </div>
+            `;
+        }
+
+        function loadAllTeams() {
+            loadTeams(1, 10);
+        }
+
+        function loadTeams(start, end) {
+            const container = document.getElementById('teams-container');
+            container.innerHTML = '';
+
+            for (let i = start; i <= end; i++) {
+                const frame = document.createElement('div');
+                frame.className = 'team-frame';
+                frame.innerHTML = `
+                    <div class="team-header">🎮 Nhóm ${i} - Demo Mode</div>
+                    <iframe src="${BASE_URL}/login/${i}"></iframe>
+                `;
+                container.appendChild(frame);
+            }
+        }
+
+        function clearAll() {
+            document.getElementById('admin-container').innerHTML = '';
+            document.getElementById('teams-container').innerHTML = '';
+        }
+
+        // Auto-load admin and first 5 teams on page load
+        window.addEventListener('load', () => {
+            console.log('Demo Mode Test View loaded');
+            console.log('Base URL:', BASE_URL);
+            console.log('Make sure the client dev server is running at', BASE_URL);
+
+            // Auto load for quick testing
+            loadAdmin();
+            setTimeout(() => loadTeams(1, 5), 500);
+        });
+    </script>
+</body>
+
+</html>

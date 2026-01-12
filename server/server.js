@@ -238,6 +238,7 @@ app.post('/api/auth/admin', async (req, res) => {
   }
 });
 
+
 // API: Google OAuth Login
 app.post('/api/auth/google', async (req, res) => {
   try {
@@ -310,6 +311,78 @@ app.post('/api/auth/google', async (req, res) => {
     });
   }
 });
+
+// API: Demo Login (for testing without real Gmail)
+app.post('/api/auth/demo', async (req, res) => {
+  // Only allow demo login in TEST_MODE
+  if (process.env.TEST_MODE !== 'true') {
+    return res.status(403).json({
+      success: false,
+      error: 'Demo login is disabled in production mode'
+    });
+  }
+
+  try {
+    const { teamId, memberIndex = 1 } = req.body;
+
+    // Validate teamId
+    if (!teamId || teamId < 1 || teamId > 10) {
+      return res.status(400).json({
+        success: false,
+        error: 'Team ID không hợp lệ (phải từ 1-10)'
+      });
+    }
+
+    // Find team in teamMembers
+    const team = teamMembers.teams.find(t => t.id === teamId);
+    if (!team) {
+      return res.status(404).json({
+        success: false,
+        error: `Không tìm thấy nhóm ${teamId}`
+      });
+    }
+
+    // Get member email (use memberIndex to get different members)
+    const memberIdx = Math.min(memberIndex - 1, team.members.length - 1);
+    const email = team.members[memberIdx];
+
+    if (!email) {
+      return res.status(404).json({
+        success: false,
+        error: `Không tìm thấy member ${memberIndex} trong ${team.name}`
+      });
+    }
+
+    // Create mock name from email
+    const name = `Demo User ${memberIndex} (${team.name})`;
+
+    // Generate JWT token
+    const authToken = jwt.sign(
+      { email, teamId: team.id, name },
+      process.env.SESSION_SECRET || 'default-secret',
+      { expiresIn: '24h' }
+    );
+
+    res.json({
+      success: true,
+      token: authToken,
+      teamId: team.id,
+      teamName: team.name,
+      email,
+      name,
+      isAdmin: false
+    });
+
+    console.log(`🎮 Demo login: ${name} (${email}) → ${team.name}`);
+  } catch (error) {
+    console.error('❌ Lỗi demo login:', error.message);
+    res.status(500).json({
+      success: false,
+      error: 'Demo login thất bại'
+    });
+  }
+});
+
 
 // Middleware: Verify JWT token for Socket.IO
 function verifySocketToken(socket, next) {
